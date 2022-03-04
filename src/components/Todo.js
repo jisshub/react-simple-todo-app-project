@@ -1,8 +1,3 @@
-#### time: 4: 50 
-
-
-## Create a Todo Component
-```js
 export default function Todo() {
   return (
     <div className="todo">
@@ -12,13 +7,3 @@ export default function Todo() {
 
   )
 }
-
-```
-
-## Inject Todo Component in App.js
-
-```js
-<Todo />
-```
-
-## Create a state to store the input field value.
