@@ -22,9 +22,9 @@ export default function Todo() {
   console.log(tasks)
 
   const handleDelete = (id) => {
-    setTasks((tasks) =>  { 
-      tasks.filter(task => task.id !== id);
-      })
+    setTasks((tasks) =>  {
+      return tasks.filter(task => task.id !== id);
+      });
   }
 
   return (
@@ -33,27 +33,19 @@ export default function Todo() {
           type="text" 
           name="text" 
           id="text" 
-          onChange={(e)=>handleChange(e)} 
+          onChange={(e)=>handleChange(e, task.id)} 
           placeholder="Add todo ..."
         />
         <button className="" onClick={submitTask}>Submit</button>    
-          {
-          tasks !== [] ? (
-            <ul>
-              {tasks.map((task, index) => (
-                <div id={task.id}>
-                  <li className="">{task.taskValue}</li>
-                  <button className="delete" 
-                          onClick={() => handleDelete(task.id)}>
-                    Delete
-                  </button>
-                </div>
-              ))  
-            }
-            </ul>
-          ): null 
-          }
-
+        {tasks ?
+          tasks.map((task, index) => (
+            <div key={task.id}>
+              <h3>{task.taskValue}</h3>
+              <button onClick={()=>handleDelete(task.id)}>Delete Task</button>
+            </div>
+          ))
+          : null
+        }
     </div>
   )
 }
