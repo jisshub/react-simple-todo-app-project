@@ -83,10 +83,25 @@ const submitTask = () => {
         <div id={task.id}>
           <li className="">{task.taskValue}</li>
         </div>
-      ))  
+      ))    
     }
     </ul>
   ): null 
 }
+```
+
+## Delete Task from todolist
+
+```jsx
+const handleDelete = (id) => {
+  setTasks((tasks) =>  { 
+    tasks.filter(task => task.id !== id);
+    })
+}
+
+<button className="delete" 
+  onClick={() => handleDelete(task.id)}>
+  Delete
+</button>
 ```
 

@@ -27,9 +27,14 @@ export default function Todo() {
       });
   }
 
+  const handleComplete = (id) => {
+    const element = tasks.findIndex((element) => element.id == id);
+    const todoList = [...] 
+  }
+
   return (
     <div className="todo">
-        <input
+        <input  
           type="text" 
           name="text" 
           id="text" 

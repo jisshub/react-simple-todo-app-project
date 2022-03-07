@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <h2>Simple Todo App</h2>
+      <h3>Please add todo item(s) through the input field</h3>
       <Todo />
     </div>
   );
